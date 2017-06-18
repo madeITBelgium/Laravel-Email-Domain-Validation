@@ -1,5 +1,5 @@
 {
-  "name": "madeITBelgium/laravel-email-domain-validation",
+  "name": "madeitbelgium/laravel-email-domain-validation",
   "version": "1.0.2",
   "description": "PHP Laravel Email domain validator",
   "keywords": ["email", "domainname"],
