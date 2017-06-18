@@ -5,7 +5,7 @@ namespace MadeITBelgium\EmailDomainValidation;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Laravel Email Domain validator
+ * Laravel Email Domain validator.
  *
  * @version    1.0.0
  *
@@ -13,14 +13,15 @@ use Illuminate\Support\Facades\Facade;
  * @author     Made I.T. <info@madeit.be>
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
  */
-class EmailDomainFacade extends Facade {
-	/**
-	 * Get the registered name of the component.
-	 *
-	 * @return string
-	 */
-	protected static function getFacadeAccessor()
-	{
-		return 'emaildomain';
-	}
+class EmailDomainFacade extends Facade
+{
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
+    protected static function getFacadeAccessor()
+    {
+        return 'emaildomain';
+    }
 }

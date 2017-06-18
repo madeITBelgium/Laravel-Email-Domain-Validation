@@ -1,8 +1,8 @@
 <?php
 
-use MadeITBelgium\EmailDomainValidation\Validation\ValidatorExtensions;
-use MadeITBelgium\EmailDomainValidation\Validation\Validator;
 use Illuminate\Validation\Factory;
+use MadeITBelgium\EmailDomainValidation\Validation\Validator;
+use MadeITBelgium\EmailDomainValidation\Validation\ValidatorExtensions;
 
 class validateTest extends \PHPUnit_Framework_TestCase
 {
@@ -10,17 +10,19 @@ class validateTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
     }
-    
-    public function testValidatorDomain() {
-        $validator = new Validator;
-        $this->assertTrue($validator->isEmailAllowed("info@madeit.be", ['madeit.be']));
+
+    public function testValidatorDomain()
+    {
+        $validator = new Validator();
+        $this->assertTrue($validator->isEmailAllowed('info@madeit.be', ['madeit.be']));
     }
-    
-    public function testValidatorNotInDomain() {
-        $validator = new Validator;
-        $this->assertTrue($validator->isEmailNotAllowed("info@madeit.be", ['example.be']));
+
+    public function testValidatorNotInDomain()
+    {
+        $validator = new Validator();
+        $this->assertTrue($validator->isEmailNotAllowed('info@madeit.be', ['example.be']));
     }
-    
+
     /*
     public function testValidIban()
     {
@@ -35,5 +37,4 @@ class validateTest extends \PHPUnit_Framework_TestCase
         $validator = $factory->make(['foo' => 'info@madeit.be'], ['foo' => 'emaildomain']);
         $this->assertTrue($validator->passes());
     }*/
-    
 }
