@@ -11,7 +11,7 @@
 Require this package in your `composer.json` and update composer.
 
 ```php
-"madeITBelgium/Laravel-Email-Domain-Validation": "~1.*"
+"madeitbelgium/laravel-email-domain-validation": "~1.*"
 ```
 
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
