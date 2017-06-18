@@ -193,11 +193,9 @@ class EmailDomain
     }
     
     private function isDomainnameValid($domainname) {
-        $pattern = '~^([\pL\pN\pS-\.])+(\.?([\pL]|xn\-\-[\pL\pN-]+)+\.?)$~ixu';
-        if(!(preg_match($pattern, $domainname) > 0)) {
-            return false;
-        }
-        return true;
+        return (preg_match("/^([a-z\d](-*[a-z\d])*)(\.([a-z\d](-*[a-z\d])*))*$/i", $domainname) //valid chars check
+            && preg_match("/^.{1,253}$/", $domainname) //overall length check
+            && preg_match("/^[^\.]{1,63}(\.[^\.]{1,63})*$/", $domainname)); //length of each label
     }
     
     private function endsWith($haystack, $needle)

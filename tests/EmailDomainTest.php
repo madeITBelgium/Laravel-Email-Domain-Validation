@@ -133,6 +133,12 @@ class EmailDomainTest extends \PHPUnit_Framework_TestCase
     {
         return [
             ['example.com'],
+            ['a'],
+            ['a.b'],
+            ['localhost'],
+            ['google.com'],
+            ['news.google.co.uk'],
+            ['xn--fsqu00a.xn--0zwm56d'],
         ];
     }
     
@@ -168,7 +174,17 @@ class EmailDomainTest extends \PHPUnit_Framework_TestCase
     public function providerInValidDomains()
     {
         return [
-            ['.com'],
+            ['goo gle.com'],
+            ['google..com'],
+            ['google.com '],
+            ['google-.com'],
+            ['.google.com'],
+            ['<script'],
+            ['alert('],
+            ['.'],
+            ['..'],
+            [' '],
+            ['-'],
         ];
     }
     
@@ -210,6 +226,12 @@ class EmailDomainTest extends \PHPUnit_Framework_TestCase
         
         $emailDomain = new EmailDomain('info@madeit.be', ['madeit.be'], null);
         $this->assertEquals(true, $emailDomain->isEmailAllowed());
+        
+        $this->assertEquals(true, $emailDomain->isEmailAllowed('tjebbe.lievens@madeit.be', ['madeit.be'], ['example.com']));
+        
+        
+        $this->assertEquals(true, $emailDomain->checkEmailIsAllowedInDomains('tjebbe.lievens@madeit.be', ['madeit.be']));
+        $this->assertEquals(false, $emailDomain->checkEmailIsNotAllowedInDomains('tjebbe.lievens@madeit.be', ['example.be']));
     }
     
     

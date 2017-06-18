@@ -38,7 +38,7 @@ class EmailDomainServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('emaildomain', 'MadeITBelgium\EmailDomain');
+        $this->app->bind('emaildomain', 'MadeITBelgium\EmailDomainValidation');
     }
     
     /**
@@ -63,6 +63,6 @@ class EmailDomainServiceProvider extends ServiceProvider
     {
         $method = 'validate' . studly_case($rule);
         $translation = $this->app['translator']->get('emaildomain::validation');
-        $this->app['validator']->extend($rule, 'MadeITBelgium\EmailDomain\Validation\ValidatorExtensions@' . $method, $translation[$rule]);
+        $this->app['validator']->extend($rule, 'MadeITBelgium\EmailDomainValidation\Validation\ValidatorExtensions@' . $method, $translation[$rule]);
     }
 }
