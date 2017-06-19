@@ -15,11 +15,17 @@
     </testsuites>
     <filter>
     <blacklist>
-        <file>src/EmailDomainFacade.php</file>
-        <file>src/EmailDomainServiceProvider.php</file>
+        <file>./src/EmailDomainFacade.php</file>
+        <file>./src/EmailDomainServiceProvider.php</file>
+        <file>./src/lang/en/validation.php</file>
     </blacklist>
     <whitelist>
-        <directory>src</directory>
+        <directory suffeix=".php">./src</directory>
+        <exclude>
+            <file>./src/EmailDomainFacade.php</file>
+            <file>./src/EmailDomainServiceProvider.php</file>
+            <file>./src/lang/en/validation.php</file>
+        </exclude>
     </whitelist>
 </filter>
 </phpunit>
