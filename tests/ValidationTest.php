@@ -23,7 +23,6 @@ class validateTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($validator->isEmailNotAllowed('info@madeit.be', ['example.be']));
     }
 
-    
     public function testValidEmail()
     {
         $validator = Mockery::mock('MadeITBelgium\EmailDomainValidation\Validation\Validator');
@@ -37,7 +36,7 @@ class validateTest extends \PHPUnit_Framework_TestCase
         $validator = $factory->make(['foo' => 'info@madeit.be'], ['foo' => 'domain:madeit.be']);
         $this->assertTrue($validator->passes());
     }
-    
+
     public function testValidEmailFails()
     {
         $validator = Mockery::mock('MadeITBelgium\EmailDomainValidation\Validation\Validator');
@@ -72,7 +71,7 @@ class validateTest extends \PHPUnit_Framework_TestCase
         $validator = $factory->make(['foo' => 'info@madeit.be'], ['foo' => 'domainnot:tpweb.org']);
         $this->assertTrue($validator->passes());
     }
-    
+
     public function testValidEmailNotAllowedFails()
     {
         $validator = Mockery::mock('MadeITBelgium\EmailDomainValidation\Validation\Validator');
