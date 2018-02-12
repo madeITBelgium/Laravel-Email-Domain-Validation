@@ -1,11 +1,11 @@
 {
   "name": "madeitbelgium/laravel-email-domain-validation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PHP Laravel Email domain validator",
   "keywords": ["email", "domainname"],
   "homepage": "http://www.madeit.be",
   "type": "library",
-  "license": "LGPL",
+  "license": "LGPL-3.0-or-later",
   "authors": [
     {
       "name": "Tjebbe Lievens - Made I.T.",
@@ -30,5 +30,12 @@
       "psr-4": {
           "MadeITBelgium\\EmailDomainValidation\\": "src/"
       }
-  }
+  },
+  "extra": {
+       "laravel": {
+           "providers": [
+               "MadeITBelgium\\EmailDomainValidation\\EmailDomainServiceProvider"
+           ]
+       }
+    }
 }
