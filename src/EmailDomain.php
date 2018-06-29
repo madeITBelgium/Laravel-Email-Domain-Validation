@@ -215,14 +215,14 @@ class EmailDomain
     private function isDomainnameValid($domainname)
     {
         return preg_match("/^([a-z\d](-*[a-z\d])*)(\.([a-z\d](-*[a-z\d])*))*$/i", $domainname) //valid chars check
-            && preg_match('/^.{1,253}$/', $domainname) //overall length check
-            && preg_match("/^[^\.]{1,63}(\.[^\.]{1,63})*$/", $domainname); //length of each label
+         && preg_match('/^.{1,253}$/', $domainname) //overall length check
+         && preg_match("/^[^\.]{1,63}(\.[^\.]{1,63})*$/", $domainname); //length of each label
     }
 
     private function endsWith($haystack, $needle)
     {
-        $expectedPosition = strlen($haystack) - strlen($needle);
+        $needle = '@' . $needle;
 
-        return strripos($haystack, $needle, 0) === $expectedPosition;
+        return ends_with($haystack, $needle);
     }
 }
