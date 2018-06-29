@@ -15,6 +15,7 @@ class validateTest extends \PHPUnit_Framework_TestCase
     {
         $validator = new Validator();
         $this->assertTrue($validator->isEmailAllowed('info@madeit.be', ['madeit.be']));
+        $this->assertFalse($validator->isEmailAllowed('info@notmadeit.be', ['madeit.be']));
     }
 
     public function testValidatorNotInDomain()
