@@ -6,7 +6,6 @@ php:
   - nightly
 
 before_install:
-- composer require phpunit/phpunit:5.* satooshi/php-coveralls:dev-master
 - composer install --dev
  
 script:
