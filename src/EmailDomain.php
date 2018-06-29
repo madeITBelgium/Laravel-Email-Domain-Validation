@@ -221,7 +221,7 @@ class EmailDomain
 
     private function endsWith($haystack, $needle)
     {
-        $needle = '@' . $needle;
+        $needle = '@'.$needle;
 
         return ends_with($haystack, $needle);
     }
