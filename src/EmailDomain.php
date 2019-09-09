@@ -2,6 +2,8 @@
 
 namespace MadeITBelgium\EmailDomainValidation;
 
+use Illuminate\Support\Str;
+
 /**
  * Laravel Email Domain validator.
  *
@@ -223,6 +225,6 @@ class EmailDomain
     {
         $needle = '@'.$needle;
 
-        return ends_with($haystack, $needle);
+        return Str::endsWith($haystack, $needle);
     }
 }
