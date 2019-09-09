@@ -3,6 +3,7 @@
 namespace MadeITBelgium\EmailDomainValidation;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 /**
  * Laravel Email Domain validator.
@@ -60,7 +61,7 @@ class EmailDomainServiceProvider extends ServiceProvider
 
     protected function extendValidator($rule)
     {
-        $method = 'validate'.studly_case($rule);
+        $method = 'validate'.Str::studly($rule);
         $translation = $this->app['translator']->get('emaildomain::validation');
         $this->app['validator']->extend($rule, 'MadeITBelgium\EmailDomainValidation\Validation\ValidatorExtensions@'.$method, $translation[$rule]);
     }
