@@ -1,6 +1,6 @@
 {
   "name": "madeitbelgium/laravel-email-domain-validation",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "PHP Laravel Email domain validator",
   "keywords": ["email", "domainname"],
   "homepage": "http://www.madeit.be",
@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=5.6",
-    "illuminate/support": "5.*|6.*",
+    "illuminate/support": "5.8.*|6.*",
     "illuminate/container": "5.*|6.*",
     "illuminate/validation": "5.*|6.*"
   },
