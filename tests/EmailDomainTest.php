@@ -1,10 +1,11 @@
 <?php
 
 use MadeITBelgium\EmailDomainValidation\EmailDomain;
+use PHPUnit\Framework\TestCase;
 
-class EmailDomainTest extends \PHPUnit_Framework_TestCase
+class EmailDomainTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
