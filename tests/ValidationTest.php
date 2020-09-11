@@ -3,10 +3,11 @@
 use Illuminate\Validation\Factory;
 use MadeITBelgium\EmailDomainValidation\Validation\Validator;
 use MadeITBelgium\EmailDomainValidation\Validation\ValidatorExtensions;
+use PHPUnit\Framework\TestCase;
 
-class validateTest extends \PHPUnit_Framework_TestCase
+class validateTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
