@@ -52,7 +52,7 @@ class validateTest extends TestCase
         $translator->shouldReceive('get')->once()->with('validation.domain')->andReturn('validation.domain');
         $translator->shouldReceive('get')->once()->with('validation.attributes')->andReturn('validation.attributes');
         $translator->shouldReceive('get')->once()->with('validation.values.foo.info@madeit.be')->andReturn('validation.values.foo.info@madeit.be');
-        
+
         $factory = new Factory($translator, $container);
         $factory->extend('domain', 'MadeITBelgium\EmailDomainValidation\Validation\ValidatorExtensions@validateDomain', 'The domain of :attribute is not allowed');
         $validator = $factory->make(['foo' => 'info@madeit.be'], ['foo' => 'domain:example.be']);
@@ -89,7 +89,7 @@ class validateTest extends TestCase
         $translator->shouldReceive('get')->once()->with('validation.domainnot')->andReturn('validation.domainnot');
         $translator->shouldReceive('get')->once()->with('validation.attributes')->andReturn('validation.attributes');
         $translator->shouldReceive('get')->once()->with('validation.values.foo.info@madeit.be')->andReturn('validation.values.foo.info@madeit.be');
-        
+
         $factory = new Factory($translator, $container);
         $factory->extend('domainnot', 'MadeITBelgium\EmailDomainValidation\Validation\ValidatorExtensions@validateDomainnot', 'The domain of :attribute is not allowed');
         $validator = $factory->make(['foo' => 'info@madeit.be'], ['foo' => 'domainnot:madeit.be']);
