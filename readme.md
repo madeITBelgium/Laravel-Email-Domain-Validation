@@ -31,7 +31,7 @@ MadeITBelgium\EmailDomainValidation\EmailDomainServiceProvider::class,
 You can use the facade for shorter code. Add this to your aliases:
 
 ```php
-'EmailDomainValidation' => TPWeb\EmailDomainValidation\EmailDomainFacade::class,
+'EmailDomainValidation' => MadeITBelgium\EmailDomainValidation\EmailDomainFacade::class,
 ```
 
 # Documentation
